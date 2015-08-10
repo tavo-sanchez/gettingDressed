@@ -1,0 +1,9 @@
+.DS-Store
+.idea
+!.gitkeep
+.gradle
+build/
+out/
+*.iml
+.project
+.classpath

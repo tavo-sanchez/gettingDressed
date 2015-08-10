@@ -1,0 +1,35 @@
+group 'com.gustavo'
+version '1.0-SNAPSHOT'
+
+buildscript{
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+war {
+    baseName = 'gettingDressed'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+}
